@@ -2,6 +2,6 @@
 
 class IndexAction extends CommonAction {
     public function index(){
-		echo 'index';
+		echo 'Admin/index';
     }
 }
