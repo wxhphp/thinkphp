@@ -8,12 +8,15 @@
  */
 
 class CommonAction extends Action {
+	/**
+	 * 构造方法，在后台公共控制器中起权限验证作用。
+	 */
 	public function __construct() {
 		//1.进行登录验证
-        if(!empty($_SESSION['admin_login_id'])){            
+        if(!empty($_SESSION['admin_login_flag'])){            
             parent::__construct();           //若成功登录，执行一次父类的构造方法 ? 为什么要这样？
         }else{            
-            $this->redirect('Public/login'); //若未成功登录，跳转到登录页面
+            $this->redirect('Login/index'); //若未成功登录，跳转到登录页面
             return false;    
         }
 	}
